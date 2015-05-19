@@ -1,0 +1,17 @@
+-------------------------------------------------------------------------------
+(c) ChipVerify
+-------------------------------------------------------------------------------
+                                 README
+-------------------------------------------------------------------------------
+
+You'll learn how to use randomization features in System Verilog.
+
+crv-101     :  Basic randomization using rand/randc and randomize() method
+crv-102     :  Add simple constraints - internal/external/inline 
+
+
+NOTE: If you see `ifdef within the code, it means you can define the mentioned
+      phrase and get a different output. Please try all of them. For irun, 
+      $> irun -sv crv-102.sv +define+MYVAR_LESS_THAN_ZERO
+      $> irun -sv crv-102.sv +define+MYVAR_CONSTRAINT_CONFLICT
+-------------------------------------------------------------------------------
