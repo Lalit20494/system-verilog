@@ -8,6 +8,7 @@ You'll learn how to use randomization features in System Verilog.
 
 crv-101     :  Basic randomization using rand/randc and randomize() method
 crv-102     :  Add simple constraints - internal/external/inline 
+crv-103 	:  Constraints with simple expressions
 
 
 NOTE: If you see `ifdef within the code, it means you can define the mentioned
