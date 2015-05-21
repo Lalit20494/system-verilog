@@ -1,0 +1,25 @@
+-------------------------------------------------------------------------------
+(c) ChipVerify
+-------------------------------------------------------------------------------
+                                 README
+-------------------------------------------------------------------------------
+
+This session covers the OOP concepts in System Verilog
+
+class-101   :  Basic class syntax, and use of new(), functions and assignments
+class-102   :  Inheritance
+class-103   :  Polymorphism - use of virtual
+class-104   :  Encapsulation - using local, protected, etc
+class-105   :  Pure and Virtual Classes
+class-106   :  Parameterized classes
+class-107   :  Nested classes
+class-108   :  Use of static members
+class-109   :  Casting from one class variable to another
+class-110   :  External functions/tasks and usage of scope resolution
+class-111   :  Usage of null and typedef class 
+
+NOTE: If you see `ifdef within the code, it means you can define the mentioned
+      phrase and get a different output. Please try all of them. For irun, 
+      $> irun -sv class-101.sv +define+NO_NEW_FN
+      $> irun -sv class-101.sv +define+NO_CONSTRUCTOR+NO_NEW_FN
+-------------------------------------------------------------------------------
