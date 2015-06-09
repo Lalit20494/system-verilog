@@ -1,0 +1,22 @@
+-------------------------------------------------------------------------------
+ Copyright (c) 2015, ChipVerify
+-------------------------------------------------------------------------------
+                                    README
+-------------------------------------------------------------------------------
+
+Verilog-2001 provides 3 basic ways for defining compile-time constants:
+    -  parameter
+    -  localparam
+    -  specparam
+
+There are 3 ways to set the value of parameter constants in design :
+    -  Implicit in-line redefinition    mydsn #(5, 3)               dsn0 ( .clk(clk),
+                                                                           ... );
+    -  Explicit in-line redefinition    mydsn #(.val1(4), .val2(1)) dsn0 ( .clk(clk),
+                                                                            ...);
+    -  defparam statements              defparam dut0.mydsn.val1 = 5;
+                                        defparam dut0.mydsn.val2 = 4;
+
+param-101   :  Shows 3 ways to override parameter defaults in design module
+param-201   :  How to parameterize a data-type, and override from outside
+-------------------------------------------------------------------------------
