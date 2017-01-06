@@ -5,9 +5,6 @@
 
 function automatic split (input string org, string delim, output string array[$]);
    string tmp = "";
-
-   foreach (array[i])
-      $display ("check: %s", array[i]);
    
    foreach (org[i]) begin
       if (org[i] == delim) begin
