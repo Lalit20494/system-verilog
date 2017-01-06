@@ -12,7 +12,7 @@ function automatic split (input string org, string delim, output string array[$]
             array.push_back (tmp);
          tmp = "";
       end else
-         tmp = $sformatf ("%s%s", tmp, org[i]);
+         tmp = {tmp, org[i]};
    end
    if (tmp.len() > 0)
       array.push_back (tmp);
