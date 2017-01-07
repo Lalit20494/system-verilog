@@ -3,11 +3,17 @@
 //            These are compiler directives or in other words, instructions
 //            for the compiler to include or omit certain parts of the code
 //            as defined by the `ifdef in the simulation
+//            You can also do the below to always include the part as:
+//             `define [ifdef_macro_text] 
+
+// `define USAGE        // Uncomment this to always execute code within USAGE
 
 module tb;
    bit [7:0]  data;
 
    initial begin
+      // This display statement is not within any `ifdef block and hence will 
+      // always be printed regardless of what is passed using +define+
       $display ("This code is not within `ifdef ...");
 
 `ifdef PART1
@@ -20,14 +26,14 @@ module tb;
       data = 8'h22;
       $display ("ELSE: data = 0x%0h", data);
 `endif
-
+      
       $display ("This code is outside `ifdef ...");
 
-`ifdef USAGE
+`ifdef USAGE        // Look for this display message in log if +define+USAGE used 
    $display ("This is the usage of `ifdef - `endif");
 `endif
 
-`ifndef NOTDEF
+`ifndef NOTDEF      // if not defined : This display will be output by default, to mask use +define+NOTDEF
    $display ("NOTDEF was not provided as compile time arg ...");
 `endif
 
