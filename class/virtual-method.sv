@@ -1,7 +1,8 @@
 // Author   : Admin (www.chipverify.com)
 // Purpose  : Example of a virtual function
 //            Functions/Tasks declared as virtual will enable a 
-//            child class object to call its own version of the 
+//            parent class object pointing to a child class object
+// 	      to call the child version of the 
 //            same function instead of the parent's version
 
 class Packet;
