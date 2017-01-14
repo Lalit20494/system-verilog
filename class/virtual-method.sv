@@ -5,16 +5,16 @@
 //            same function instead of the parent's version
 
 class Packet;
-   int addr;
+   	int addr;
 
-   function new (int addr);
-      this.addr = addr;
-   endfunction
+   	function new (int addr);
+      		this.addr = addr;
+   	endfunction
 
 `ifdef VIRTUAL
 	virtual function display ();
 `else
-   function display ();
+ 	function display ();
 `endif
 		$display ("[Base] addr=0x%0h", addr);
 	endfunction
@@ -23,10 +23,10 @@ endclass
 class ExtPacket extends Packet;
 	int data;
 
-   function new (int addr, data);
-      super.new (addr);
-      this.data = data;
-   endfunction
+   	function new (int addr, data);
+      		super.new (addr);
+      		this.data = data;
+   	endfunction
 
 	function display ();
 		$display ("[Child] addr=0x%0h data=0x%0h", addr, data);
@@ -34,13 +34,13 @@ class ExtPacket extends Packet;
 endclass
 
 module tb;
-   Packet bc;
-   ExtPacket sc;
+   	Packet bc;
+   	ExtPacket sc;
 
 	initial begin
-        sc = new (32'hfeed_feed, 32'h1234_5678);	
+        	sc = new (32'hfeed_feed, 32'h1234_5678);	
 
-        bc = sc; 
+        	bc = sc; 
 		bc.display ();
 	end
 endmodule
