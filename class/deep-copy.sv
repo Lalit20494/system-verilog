@@ -26,11 +26,11 @@ class Packet;
 		this.data = data;
 	endfunction
 
-   function copy (Packet p);
-      this.addr = p.addr;
-      this.data = p.data;
-      this.hdr.id = p.hdr.id;
-   endfunction
+   	function copy (Packet p);
+      		this.addr = p.addr;
+      		this.data = p.data;
+      		this.hdr.id = p.hdr.id;
+   	endfunction
 	
 	function display (string name);
 		$display ("[%s] addr=0x%0h data=0x%0h id=%0d", name, addr, data, hdr.id);
@@ -44,17 +44,28 @@ module tb;
 		p1.display ("p1");
 		
 		p2 = new (1,2,3);  // give some values
-        p2.copy (p1);
+        	p2.copy (p1);
 		p2.display ("p2");
 		
 		// Now let's change the addr and id in p1
 		p1.addr = 32'habcd_ef12;
-        p1.data = 32'h5a5a_5a5a;
+        	p1.data = 32'h5a5a_5a5a;
 		p1.hdr.id = 32'h11;
 		p1.display ("p1");
 		
-		// Now let's print p2 - you'll see the changes made to hdr id 
-		// but not addr
+		// Now let's print p2 - notice that change in
+		// p1.hdr.id did not reflect in p2.hdr.id because
+		// we did a deep copy, and not a shallow copy
 		p2.display ("p2");
 	end
 endmodule
+
+/* Simulation Log:
+------------------
+run -all;
+# KERNEL: [p1] addr=0xfacecafe data=0x12345678 id=26
+# KERNEL: [p2] addr=0xfacecafe data=0x12345678 id=26
+# KERNEL: [p1] addr=0xabcdef12 data=0x5a5a5a5a id=17
+# KERNEL: [p2] addr=0xfacecafe data=0x12345678 id=26
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+*/
