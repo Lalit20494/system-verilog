@@ -1,5 +1,3 @@
-# system-verilog
-
 <p>Examples of System-Verilog code</p>
 
 <table>
