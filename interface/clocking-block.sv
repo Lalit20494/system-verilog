@@ -1,5 +1,6 @@
 // Author   : Admin (www.chipverify.com)
 // Purpose  : Example of a clocking block
+//---------------------------------------------------------------
 
 
 `timescale 1ns/1ns
