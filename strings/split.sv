@@ -29,7 +29,7 @@ module tb;
    initial begin
       split (str1, " ", array);
       foreach (array[i])
-         $display ("array[%0d] = %s", i, array[i]);
+         $display ("array[%d] = %s", i, array[i]);
 
       split (str2, " ", array);
       foreach (array[i])
