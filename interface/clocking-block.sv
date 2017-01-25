@@ -79,8 +79,9 @@ module tb;
       $finish;
    end
 
-   initial begin
-      $shm_open ("waves.shm", 0, , 1);
-      $shm_probe (tb, "ACTF");
-   end
+   // Use this to dump waveform when using Cadence simulator
+   //initial begin
+   //   $shm_open ("waves.shm", 0, , 1);
+   //   $shm_probe (tb, "ACTF");
+   //end
 endmodule
