@@ -29,7 +29,6 @@ endclass
 // Display the values and see how rand/randc are different. Also learn how
 // std::randomize () can be called on a variable outside a class
 //-----------------------------------------------------------------------------
-
 module tb_top;
 	myPacket pkt;
     bit [3:0]    myVar;
