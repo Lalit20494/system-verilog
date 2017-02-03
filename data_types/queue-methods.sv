@@ -9,87 +9,76 @@ module tb;
       string tmp;
 
       // Queue initialization
+      $display ("Before Queue Initialization, size=%0d", friends.size());
       friends = { "Ross", "Joey", "Chandler" };
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      $display ("After Queue Initialization, size=%0d", friends.size());
+      display();
 
-      $display ("Size of friends : %0d", friends.size());
-
-      $display ("--------------------------");
       // Insert someone to the queue
+      $display ("Insert Rachel to Idx:2 ...");
       friends.insert (2, "Rachel");
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
-      $display ("Size of friends : %0d", friends.size());
+      display();
 
-      $display ("--------------------------");
+      $display ("Delete Idx:3 ...");
       friends.delete (3);
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      display();
 
-      $display ("--------------------------");
+      $display ("Push Back Phoebe ...");
       friends.push_back ("Phoebe");
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      display();
 
-      $display ("--------------------------");
+      $display ("Push Front Monica ...");
       friends.push_front ("Monica");
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      display();
      
-      $display ("--------------------------");
+      $display ("Pop from the back using pop_back() ...");
       tmp = friends.pop_back ();
       $display ("Popped %s from the back", tmp);
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      display();
       
-      $display ("--------------------------");
+      $display ("Pop from the front using pop_front() ...");
       tmp = friends.pop_front ();
       $display ("Popped %s from the front", tmp);
-      foreach (friends [i]) 
-         $display ("%s", friends[i]);
+      display();
    end
+
+   function automatic display ();
+      string tmp = "";
+
+      foreach (friends [i]) 
+         tmp = $sformatf ("%s %s", tmp, friends[i]);
+
+      $display ("%s\n", tmp);
+   endfunction
 endmodule
 
 /* Simulation Log:
 ------------------
 run -all;
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Chandler
-# KERNEL: Size of friends : 3
-# KERNEL: --------------------------
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
-# KERNEL: Chandler
-# KERNEL: Size of friends : 4
-# KERNEL: --------------------------
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
-# KERNEL: --------------------------
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
-# KERNEL: Phoebe
-# KERNEL: --------------------------
-# KERNEL: Monica
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
-# KERNEL: Phoebe
-# KERNEL: --------------------------
+# KERNEL: Before Queue Initialization, size=0
+# KERNEL: After Queue Initialization, size=3
+# KERNEL:  Ross Joey Chandler
+# KERNEL: 
+# KERNEL: Insert Rachel to Idx:2 ...
+# KERNEL:  Ross Joey Rachel Chandler
+# KERNEL: 
+# KERNEL: Delete Idx:3 ...
+# KERNEL:  Ross Joey Rachel
+# KERNEL: 
+# KERNEL: Push Back Phoebe ...
+# KERNEL:  Ross Joey Rachel Phoebe
+# KERNEL: 
+# KERNEL: Push Front Monica ...
+# KERNEL:  Monica Ross Joey Rachel Phoebe
+# KERNEL: 
+# KERNEL: Pop from the back using pop_back() ...
 # KERNEL: Popped Phoebe from the back
-# KERNEL: Monica
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
-# KERNEL: --------------------------
+# KERNEL:  Monica Ross Joey Rachel
+# KERNEL: 
+# KERNEL: Pop from the front using pop_front() ...
 # KERNEL: Popped Monica from the front
-# KERNEL: Ross
-# KERNEL: Joey
-# KERNEL: Rachel
+# KERNEL:  Ross Joey Rachel
+# KERNEL: 
 # KERNEL: Simulation has finished. There are no more test vectors to simulate.
 
 */
