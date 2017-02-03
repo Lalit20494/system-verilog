@@ -3,10 +3,7 @@
 //-------------------------------------------------------
 
 module tb;
-   byte     data[$];
    string   friends[$];
-   int      integers[$] = { 1, 2, 3 };
-   bit      bits[$:127];   // Queue with maximum size of 128 bits
 
    initial begin
       string tmp;
