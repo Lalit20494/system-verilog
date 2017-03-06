@@ -7,25 +7,24 @@ module tb;
   	int id [];
   
   	initial begin
-    	array = new [5];
-      	array = '{1, 2, 3, 4, 5};
+    		array = new [5];
+      		array = '{1, 2, 3, 4, 5};
       
-      	id = array;
+      		id = array;
+		display (id);
+      		id = new [id.size() + 1] (id);
+      		id [id.size() - 1] = 6;
+      		display (id);
       
-      	display (id);
-      	id = new [id.size() + 1] (id);
-      	id [id.size() - 1] = 6;
-      	display (id);
-      
-      	$display ("Size of array = %0d", array.size());
-      	array.delete();
-      	$display ("Size of array = %0d", array.size());  
-    end
+      		$display ("Size of array = %0d", array.size());
+      		array.delete();
+      		$display ("Size of array = %0d", array.size());  
+    	end
   
   	function display (int arr []);
-    	$display ("----------------");
-    	foreach (arr [i])
-      		$display ("arr[%0d] = %0d", i, arr[i]);
+    		$display ("----------------");
+    		foreach (arr [i])
+      			$display ("arr[%0d] = %0d", i, arr[i]);
   	endfunction
 endmodule
 
