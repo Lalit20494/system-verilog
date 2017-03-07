@@ -3,6 +3,7 @@
 //            in a function
 //-----------------------------------------------------------------
 
+// Use a typedef'd datatype to return a dynamic array
 typedef string str_da [];
 
 module tb;
@@ -34,3 +35,18 @@ module tb;
    endfunction
 `endif
 endmodule
+
+
+/* Simulation Log:
+-------------------
+run -all;
+# KERNEL: list[0] = 1
+# KERNEL: list[1] = 2
+# KERNEL: list[2] = 3
+# KERNEL: list[3] = 4
+# KERNEL: friends[0] = Joey
+# KERNEL: friends[1] = Chandler
+# KERNEL: friends[2] = Phoebe
+# KERNEL: Simulation has finished. There are no more test vectors to simulate.
+
+*/
