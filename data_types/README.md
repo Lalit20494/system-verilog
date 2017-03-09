@@ -21,7 +21,7 @@
   
   <tr>
     <td>dyn-assoc-array</td>
-    <td>Example of creating nested associative arrays in a fundamental dynamic array</td>
+    <td>Every dynamic array index contains an associative array</td>
   </tr>
   
   <tr>
