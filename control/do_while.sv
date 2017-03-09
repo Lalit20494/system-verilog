@@ -6,11 +6,11 @@ module tb_top;
   
   bit [3:0] counter;
 
-	initial begin
+  initial begin
   
     // Loop executes atleast once
-		do 
-	    	counter ++;
+    do 
+       counter ++;
     while (counter < 0);
       
     $display ("After loop[1] counter = %0d", counter);
