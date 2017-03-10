@@ -1,5 +1,19 @@
-<p>Interfaces are new constructs in System Verilog that capture port signals into a single entity that can be passed around the testbench so that any component
-that requires to access the port signals can do so by using the interface handle. </p>
+<p>Interfaces are new constructs in System Verilog that capture port signals into a single entity that can be passed around the testbench so that any component that requires to access the port signals can do so by using the interface handle. </p>
+
+<p>
+                       .-----.       
+                       |  I  |       .-------------.
+   .-----------.       |  N  |       |             |
+   |           |       |  T  |       |             |
+   |   Driver  |       |  E  |       |             |
+   |    in     |------>|  R  |------>|     DUT     |     
+   | TestBench |       |  F  |       |             |
+   |           |<------|  A  |<------|             |
+   |           |       |  C  |       |             |
+   '-----------'       |  E  |       '-------------'
+                       '-----'
+</p>
+
 
 <table>
   <tr>
