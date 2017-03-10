@@ -13,8 +13,10 @@ module tb;
   initial begin
     array1 = '{ "joey" : 1,
                "ross" : 2,
-               "rachel" : 10,
                "monica" : 25};
+    
+    // You can also assign like shown below
+    array1 ["rachel"] = 10;
                
     array2 = '{  1 : 22,
                  6 : 35 };
