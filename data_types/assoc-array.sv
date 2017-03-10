@@ -15,7 +15,8 @@ module tb;
                "ross" : 2,
                "monica" : 25};
     
-    // You can also assign like shown below
+    // You can also assign like shown below which will 
+    // add the key-value pair to array1
     array1 ["rachel"] = 10;
                
     array2 = '{  1 : 22,
