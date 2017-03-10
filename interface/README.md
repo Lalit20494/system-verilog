@@ -1,6 +1,6 @@
 <p>Interfaces are new constructs in System Verilog that capture port signals into a single entity that can be passed around the testbench so that any component that requires to access the port signals can do so by using the interface handle. </p>
 
-<p>
+<pre>
                        .-----.       
                        |  I  |       .-------------.
    .-----------.       |  N  |       |             |
@@ -12,7 +12,7 @@
    |           |       |  C  |       |             |
    '-----------'       |  E  |       '-------------'
                        '-----'
-</p>
+</pre>
 
 
 <table>
